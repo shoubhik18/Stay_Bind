@@ -76,7 +76,7 @@ const Home = () => {
       <img className="p-14 " src={group} alt="" />
       <div className="mt-10">
         <div className="relative overflow-hidden h-12 bg-black transform -rotate-3 ">
-          <div className="  absolute top-1/2 left-0  animate-scroll whitespace-nowrap">
+          <div className="  absolute top-3 left-0  animate-scroll whitespace-nowrap">
             <span className="text-white mx-4">
               Something great is on the way  . . . .  Coming Soon !! *
             </span>
