@@ -15,6 +15,9 @@ export default {
       animation: {
         scroll: 'scroll 15s linear infinite',
       },
+      backgroundImage:{
+        'hero-pattern': "url('/src/assets/frame.png')",
+       },
     },
   },
   plugins: [],

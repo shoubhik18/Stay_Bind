@@ -27,15 +27,24 @@
 
 // export default Navbar;
 
-
 import React, { useState } from "react";
 import logo from "../assets/Subtract.png";
+import LeadForm from "./LeadForm";
 
 const Navbar = () => {
   const [activeLink, setActiveLink] = useState("Home");
+  const [isLoginVisible, setIsLoginVisible] = useState(false);
 
   const handleLinkClick = (link) => {
     setActiveLink(link);
+  };
+
+  const handleSignInClick = () => {
+    setIsLoginVisible(true);
+  };
+
+  const handleCloseLogin = () => {
+    setIsLoginVisible(false);
   };
 
   return (
@@ -49,7 +58,9 @@ const Navbar = () => {
           {["Home", "Features", "Download", "Faq", "About"].map((link) => (
             <a
               key={link}
-              className={`text-gray-500 ${activeLink === link ? "text-black font-medium" : ""}`}
+              className={`cursor-pointer ${
+                activeLink === link ? "text-black font-medium" : "text-gray-500"
+              }`}
               href={`#${link.toLowerCase()}`}
               onClick={() => handleLinkClick(link)}
             >
@@ -58,16 +69,21 @@ const Navbar = () => {
           ))}
         </div>
         <div className="flex space-x-6 items-center">
-          <button className="btn border-black border-2 py-2 px-4 rounded-md font-medium">
+          <button
+            className="btn border-black border-2 py-2 px-4 rounded-md font-medium hover:bg-gray-200"
+            onClick={handleSignInClick}
+          >
             Sign in
           </button>
-          <button className="btn border-blue-500 border-2 py-2 px-4 rounded-md font-medium text-white bg-blue-500">
+          <button className="btn border-blue-500 border-2 py-2 px-4 rounded-md font-medium text-white bg-blue-500 hover:bg-blue-600 hover:border-blue-600">
             Sign up
           </button>
         </div>
       </div>
+      {isLoginVisible && <LeadForm onClose={handleCloseLogin} />}
     </div>
   );
 };
 
 export default Navbar;
+
