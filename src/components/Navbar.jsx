@@ -33,18 +33,18 @@ import LeadForm from "./LeadForm";
 
 const Navbar = () => {
   const [activeLink, setActiveLink] = useState("Home");
-  const [isLoginVisible, setIsLoginVisible] = useState(false);
+  const [isSignUpVisible, setIsSignUpVisible] = useState(false);
 
   const handleLinkClick = (link) => {
     setActiveLink(link);
   };
 
   const handleSignInClick = () => {
-    setIsLoginVisible(true);
+    setIsSignUpVisible(true);
   };
 
-  const handleCloseLogin = () => {
-    setIsLoginVisible(false);
+  const handleCloseSignUp = () => {
+    setIsSignUpVisible(false);
   };
 
   return (
@@ -69,20 +69,20 @@ const Navbar = () => {
           ))}
         </div>
         <div className="flex space-x-6 items-center">
-          <button
-            className="btn border-black border-2 py-2 px-4 rounded-md font-medium hover:bg-gray-200"
-          >
+          <button onClick={handleSignInClick} className="btn border-black border-2 py-2 px-4 rounded-md font-medium hover:bg-gray-200">
             Sign in
           </button>
-          <button onClick={handleSignInClick} className="btn border-blue-500 border-2 py-2 px-4 rounded-md font-medium text-white bg-blue-500 hover:bg-blue-600 hover:border-blue-600 ">
+          <button
+            onClick={handleSignInClick}
+            className="btn border-blue-500 border-2 py-2 px-4 rounded-md font-medium text-white bg-blue-500 hover:bg-blue-600 hover:border-blue-600 "
+          >
             Sign up
           </button>
         </div>
       </div>
-      {isLoginVisible && <LeadForm onClose={handleCloseLogin} />}
+      {isSignUpVisible && <LeadForm onClose={handleCloseSignUp} />}
     </div>
   );
 };
 
 export default Navbar;
-
