@@ -49,7 +49,7 @@ const Navbar = () => {
 
   return (
     <div>
-      <div className="flex justify-between items-center py-4 px-12">
+      <div className="flex justify-between items-center py-4 px-12 fixed w-full bg-white top-0 z-50 ">
         <div className="flex space-x-4 items-center">
           <img src={logo} alt="Stay Bind Logo" className="h-12" />
           <h1 className="text-3xl font-bold text-gray-600">Stay Bind</h1>
@@ -71,11 +71,10 @@ const Navbar = () => {
         <div className="flex space-x-6 items-center">
           <button
             className="btn border-black border-2 py-2 px-4 rounded-md font-medium hover:bg-gray-200"
-            onClick={handleSignInClick}
           >
             Sign in
           </button>
-          <button className="btn border-blue-500 border-2 py-2 px-4 rounded-md font-medium text-white bg-blue-500 hover:bg-blue-600 hover:border-blue-600">
+          <button onClick={handleSignInClick} className="btn border-blue-500 border-2 py-2 px-4 rounded-md font-medium text-white bg-blue-500 hover:bg-blue-600 hover:border-blue-600 ">
             Sign up
           </button>
         </div>
