@@ -52,7 +52,7 @@ const Navbar = () => {
       <div className="flex justify-between items-center py-4 px-12 fixed w-full bg-white top-0 z-50 ">
         <div className="flex space-x-4 items-center">
           <img src={logo} alt="Stay Bind Logo" className="h-12" />
-          <h1 className="text-3xl font-bold text-gray-600">Stay Bind</h1>
+          <h1 className="text-3xl font-bold text-gray-600">StayBind</h1>
         </div>
         <div className="flex space-x-6 items-center">
           {["Home", "Features", "Download", "Faq", "About"].map((link) => (

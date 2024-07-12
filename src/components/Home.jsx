@@ -10,7 +10,7 @@ const Home = () => {
         <div className=" p-24 ">
           <h1 className=" text-3xl md:text-5xl font-extrabold text-gray-700 md:leading-normal ">
             Rent out your holiday home like a pro with{" "}
-            <span className="text-blue-500">Stay Bind</span>{" "}
+            <span className="text-blue-500">StayBind</span>{" "}
           </h1>
           <p className="text-sm text-gray-500 mb-6 pt-4 ">
             Put the most advanced technology to work for you. Manage, automate,
