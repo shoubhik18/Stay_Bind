@@ -3,7 +3,7 @@ import { toast } from 'react-toastify';
 import { url } from '../../api/baseUrl';
 
 export const submitLead = createAsyncThunk('leads/submitLead', async (lead) => {
-  const response = await fetch(`${url}leads`, {
+  const response = await fetch(`${url}/leads`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

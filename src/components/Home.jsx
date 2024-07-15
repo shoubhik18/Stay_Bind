@@ -170,8 +170,8 @@ const Home = () => {
     switch (activeSection) {
       case "Home":
         return (
-          <div className="flex justify-center items-center w-[550px]">
-            <img className="h-[90vh] w-[100vw]" src={iphone} alt="" />
+          <div className="flex justify-center items-center w-[550px] xl:w-[800px] ">
+            <img className="h-[90vh] w-[100vw]" src={iphone} alt="iphone15.png" />
           </div>
         );
       case "Calendar":
