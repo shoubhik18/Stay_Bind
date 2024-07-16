@@ -14,7 +14,7 @@
 //       case "Home":
 //         return (
 //           <div className="flex justify-center items-center w-[550px]">
-//             <img className="h-[90vh] w-[100vw]" src={iphone} alt="" />
+//             <img className="h-[90vh] w-[100vw]" src={iphone} alt="iphone15.png" />
 //           </div>
 //         );
 //       case "Calendar":
@@ -109,19 +109,26 @@
 //             <p className="text-gray-400">01</p>
 //             <h3 className={`font-extrabold ${activeSection === "Home" && "text-blue-500"}`}>Home</h3>
 //           </div>
-//           <div className="bg-gray-300 w-0.5 h-14"></div>
+//             {activeSection === "Home" && <div className="bg-gray-300 w-0.5 h-14"></div>}
+//           {activeSection === "Calendar" && <div className="bg-gray-300 w-0.5 h-7"></div>}
 //           <div className="flex space-x-6 cursor-pointer" onClick={() => setActiveSection("Calendar")}>
 //             <p className="text-gray-400">02</p>
 //             <h3 className={`font-extrabold ${activeSection === "Calendar" && "text-blue-500"}`}>Calendar</h3>
 //           </div>
+//           {activeSection === "Calendar" && <div className="bg-gray-300 w-0.5 h-7"></div>}
+//           {activeSection === "Pricing" && <div className="bg-gray-300 w-0.5 h-7"></div>}
 //           <div className="flex space-x-6 cursor-pointer" onClick={() => setActiveSection("Pricing")}>
 //             <p className="text-gray-400">03</p>
 //             <h3 className={`font-extrabold ${activeSection === "Pricing" && "text-blue-500"}`}>Pricing</h3>
 //           </div>
+//           {activeSection === "Pricing" && <div className="bg-gray-300 w-0.5 h-7"></div>}
+//           {activeSection === "Worker" && <div className="bg-gray-300 w-0.5 h-7"></div>}
 //           <div className="flex space-x-6 cursor-pointer" onClick={() => setActiveSection("Worker")}>
 //             <p className="text-gray-400">04</p>
 //             <h3 className={`font-extrabold ${activeSection === "Worker" && "text-blue-500"}`}>Worker</h3>
 //           </div>
+//           {activeSection === "Worker" && <div className="bg-gray-300 w-0.5 h-7"></div>}
+//           {activeSection === "Profile" && <div className="bg-gray-300 w-0.5 h-14"></div>}
 //           <div className="flex space-x-6 cursor-pointer" onClick={() => setActiveSection("Profile")}>
 //             <p className="text-gray-400">05</p>
 //             <h3 className={`font-extrabold ${activeSection === "Profile" && "text-blue-500"}`}>Profile</h3>
@@ -129,8 +136,8 @@
 //         </div>
         
 //       </div>
-//       <img className="p-14" src={group} alt="" />
-//       <div className="mt-10">
+//       <img className="p-14 w-full " src={group} alt="" />
+//       <div className="mt-10 w-full ">
 //         <div className="relative overflow-hidden h-12 bg-black transform -rotate-3">
 //           <div className="absolute top-3 left-0 animate-scroll whitespace-nowrap">
 //             <span className="text-white mx-4">
@@ -156,12 +163,185 @@
 
 
 
+
+
+
+
+// import React, { useState } from "react";
+// import iphone from "../assets/iPhone.png";
+// import { FaRegPlayCircle } from "react-icons/fa";
+// import group from "../assets/Group.png";
+// import Calendar from "react-calendar";
+// import 'react-calendar/dist/Calendar.css';
+
+// const Home = () => {
+//   const [activeSection, setActiveSection] = useState("Home");
+
+//   const renderContent = () => {
+//     switch (activeSection) {
+//       case "Home":
+//         return (
+//           <div className="flex justify-center items-center w-full  lg:w-[670px]">
+//             <img className="h-[30vh] w-[60vw] md:w-[auto]  lg:h-[80vh]" src={iphone} alt="iphone15.png" />
+//           </div>
+//         //   <div className="flex justify-center items-center w-full  md:w-[550px] xl:w-[800px]">
+//         //   <img className="h-[30vh]  lg:h-[80vh] w-[60vw] md:w-auto" src={image} alt="iphone15.png" />
+//         // </div>
+
+//         );
+//       case "Calendar":
+//         return (
+//           <div className="flex justify-center items-center w-full sm:w-[400px] xl:w-[670px]">
+//             <div className="p-4 sm:p-10">
+//               <h2 className="text-xl sm:text-2xl font-bold">Calendar</h2>
+//               <Calendar className="mt-4" />
+//             </div>
+//           </div>
+//         );
+//       case "Pricing":
+//         return (
+//           <div className="flex justify-center items-center w-full sm:w-[400px] xl:w-[670px]">
+//             <div className="p-4 sm:p-10">
+//               <h2 className="text-xl sm:text-2xl font-bold">Pricing</h2>
+//               <p className="mt-4">No data available</p>
+//             </div>
+//           </div>
+//         );
+//       case "Worker":
+//         return (
+//           <div className="flex justify-center items-center w-full sm:w-[400px] xl:w-[670px]">
+//             <div className="p-4 sm:p-10">
+//               <h2 className="text-xl sm:text-2xl font-bold">Worker</h2>
+//               <p className="mt-4">No data available</p>
+//             </div>
+//           </div>
+//         );
+//       case "Profile":
+//         return (
+//           <div className="flex justify-center items-center w-full sm:w-[400px] xl:w-[670px] ">
+//             <div className="p-4 sm:p-10">
+//               <h2 className="text-xl sm:text-2xl font-bold">Profile</h2>
+//               <p className="mt-4">Please sign in</p>
+//             </div>
+//           </div>
+//         );
+//       default:
+//         return null;
+//     }
+//   };
+  
+//   return (
+//     <div>
+//       <div className='flex flex-col lg:flex-row sm:mx-auto'>
+//         <div className='p-12 md:p-52 md:pt-24 sm:p-10 lg:p-32 mt-4'>
+//           <h1 className='text-3xl sm:text-4xl lg:text-5xl md:mt-4 font-extrabold text-gray-700 lg:leading-normal md:leading-normal'>
+//             Rent out your holiday home like a pro with{" "}
+//             <span className='text-blue-500'>StayBind</span>
+//           </h1>
+//           <p className='text-xs sm:text-sm lg:text-base text-gray-500 mb-4 sm:mb-6 pt-2 sm:pt-4'>
+//             Put the most advanced technology to work for you. Manage, automate,
+//             and streamline your business, all from one platform.
+//           </p>
+
+//           <div className='flex p-2 mt-4 sm:mt-10 items-center space-x-4 sm:space-x-8'>
+//             <button className='px-3 sm:px-5 py-2 sm:py-3 text-xs sm:text-sm text-white bg-blue-500 rounded-sm'>
+//               Get started
+//             </button>
+//             <div className='flex text-2xl sm:text-4xl font-light items-center space-x-2'>
+//               <FaRegPlayCircle />
+//               <p className='text-xs sm:text-base'>Watch Video</p>
+//             </div>
+//           </div>
+//           <div className='flex p-2 mt-8 space-x-4 sm:space-x-12'>
+//             <div className='text-center'>
+//               <h2 className='text-2xl sm:text-4xl text-gray-700 font-semibold tracking-wider'>
+//                 321%
+//               </h2>
+//               <p className='text-gray-400 text-xs'>Occupancy Rate</p>
+//             </div>
+//             <div className='text-center'>
+//               <h2 className='text-2xl sm:text-4xl text-gray-700 font-semibold tracking-wider'>
+//                 25k
+//               </h2>
+//               <p className='text-gray-400 text-xs'>Revenue</p>
+//             </div>
+//             <div className='text-center'>
+//               <h2 className='text-2xl sm:text-4xl text-gray-700 font-semibold tracking-wider'>
+//                 150+
+//               </h2>
+//               <p className='text-gray-400 text-xs'>Bookings</p>
+//             </div>
+//           </div>
+//         </div>
+//         <div className="flex-grow flex flex-col lg:flex-row justify-center items-center">
+//     {renderContent()}
+//     <div className="flex flex-col p-4 sm:p-10 lg:p-20 space-y-4">
+//       <div className="flex space-x-4 sm:space-x-6 cursor-pointer" onClick={() => setActiveSection("Home")}>
+//         <p className="text-gray-400">01</p>
+//         <h3 className={`font-extrabold ${activeSection === "Home" && "text-blue-500"}`}>Home</h3>
+//       </div>
+//       {activeSection === "Home" && <div className="bg-gray-300 w-0.5 h-10 sm:h-14"></div>}
+//       {activeSection === "Calendar" && <div className="bg-gray-300 w-0.5 h-7 sm:h-7"></div>}
+//       <div className="flex space-x-4 sm:space-x-6 cursor-pointer" onClick={() => setActiveSection("Calendar")}>
+//         <p className="text-gray-400">02</p>
+//         <h3 className={`font-extrabold ${activeSection === "Calendar" && "text-blue-500"}`}>Calendar</h3>
+//       </div>
+//       {activeSection === "Calendar" && <div className="bg-gray-300 w-0.5 h-7"></div>}
+//       {activeSection === "Pricing" && <div className="bg-gray-300 w-0.5 h-7"></div>}
+//       <div className="flex space-x-4 sm:space-x-6 cursor-pointer" onClick={() => setActiveSection("Pricing")}>
+//         <p className="text-gray-400">03</p>
+//         <h3 className={`font-extrabold ${activeSection === "Pricing" && "text-blue-500"}`}>Pricing</h3>
+//       </div>
+//       {activeSection === "Pricing" && <div className="bg-gray-300 w-0.5 h-7"></div>}
+//       {activeSection === "Worker" && <div className="bg-gray-300 w-0.5 h-7"></div>}
+//       <div className="flex space-x-4 sm:space-x-6 cursor-pointer" onClick={() => setActiveSection("Worker")}>
+//         <p className="text-gray-400">04</p>
+//         <h3 className={`font-extrabold ${activeSection === "Worker" && "text-blue-500"}`}>Worker</h3>
+//       </div>
+//       {activeSection === "Worker" && <div className="bg-gray-300 w-0.5 h-7"></div>}
+//       {activeSection === "Profile" && <div className="bg-gray-300 w-0.5 h-14"></div>}
+//       <div className="flex space-x-4 sm:space-x-6 cursor-pointer" onClick={() => setActiveSection("Profile")}>
+//         <p className="text-gray-400">05</p>
+//         <h3 className={`font-extrabold ${activeSection === "Profile" && "text-blue-500"}`}>Profile</h3>
+//       </div>
+//     </div>
+//   </div>
+      
+//       </div>
+
+//       <img className='p-8 sm:p-14  w-full' src={group} alt='' />
+
+//       <div className='mt-10 '>
+//         <div className='relative overflow-hidden h-12 bg-black transform -rotate-3'>
+//           <div className='absolute top-3 left-0 transform -translate-y-1/2 animate-scroll whitespace-nowrap'>
+//             <span className='text-white mx-4 font-bold'>
+//               Something great is on the way . . . . Coming Soon !!
+//             </span>
+//             <span className='text-white mx-4 font-bold'>
+//               Something great is on the way . . . . Coming Soon !!
+//             </span>
+//             <span className='text-white mx-4 font-bold'>
+//               Something great is on the way . . . . Coming Soon !!
+//             </span>
+//             <span className='text-white mx-4 font-bold'>
+//               Something great is on the way . . . . Coming Soon !!
+//             </span>
+//           </div>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default Home;
+
+
 import React, { useState } from "react";
 import iphone from "../assets/iPhone.png";
-import { FaRegPlayCircle } from "react-icons/fa";
 import group from "../assets/Group.png";
+import { FaRegPlayCircle } from "react-icons/fa";
 import Calendar from "react-calendar";
-import 'react-calendar/dist/Calendar.css';
+import "react-calendar/dist/Calendar.css";
 
 const Home = () => {
   const [activeSection, setActiveSection] = useState("Home");
@@ -170,42 +350,46 @@ const Home = () => {
     switch (activeSection) {
       case "Home":
         return (
-          <div className="flex justify-center items-center w-[550px] xl:w-[800px] ">
-            <img className="h-[90vh] w-[100vw]" src={iphone} alt="iphone15.png" />
+          <div className="flex justify-center items-center w-full  2xl:w-[800px]">
+            <img className="h-[30vh] w-[60vw] md:w-[auto]  lg:h-[80vh]" src={iphone} alt="iphone15.png" />
           </div>
+        //   <div className="flex justify-center items-center w-full  md:w-[550px] xl:w-[800px]">
+        //   <img className="h-[30vh]  lg:h-[80vh] w-[60vw] md:w-auto" src={image} alt="iphone15.png" />
+        // </div>
+
         );
       case "Calendar":
         return (
-          <div className="flex justify-center items-center w-[400px]">
-            <div className="p-10">
-              <h2 className="text-2xl font-bold">Calendar</h2>
+          <div className="flex justify-center items-center w-full sm:w-[400px] xl:w-[670px]">
+            <div className="p-4 sm:p-10">
+              <h2 className="text-xl sm:text-2xl font-bold">Calendar</h2>
               <Calendar className="mt-4" />
             </div>
           </div>
         );
       case "Pricing":
         return (
-          <div className="flex justify-center items-center w-[400px]">
-            <div className="p-10">
-              <h2 className="text-2xl font-bold">Pricing</h2>
+          <div className="flex justify-center items-center w-full sm:w-[400px] xl:w-[670px]">
+            <div className="p-4 sm:p-10">
+              <h2 className="text-xl sm:text-2xl font-bold">Pricing</h2>
               <p className="mt-4">No data available</p>
             </div>
           </div>
         );
       case "Worker":
         return (
-          <div className="flex justify-center items-center w-[400px]">
-            <div className="p-10">
-              <h2 className="text-2xl font-bold">Worker</h2>
+          <div className="flex justify-center items-center w-full sm:w-[400px] xl:w-[670px]">
+            <div className="p-4 sm:p-10">
+              <h2 className="text-xl sm:text-2xl font-bold">Worker</h2>
               <p className="mt-4">No data available</p>
             </div>
           </div>
         );
       case "Profile":
         return (
-          <div className="flex justify-center items-center w-[400px]">
-            <div className="p-10">
-              <h2 className="text-2xl font-bold">Profile</h2>
+          <div className="flex justify-center items-center w-full sm:w-[400px] xl:w-[670px] ">
+            <div className="p-4 sm:p-10">
+              <h2 className="text-xl sm:text-2xl font-bold">Profile</h2>
               <p className="mt-4">Please sign in</p>
             </div>
           </div>
@@ -214,99 +398,101 @@ const Home = () => {
         return null;
     }
   };
-
+  
   return (
     <div>
-      <div className="flex mt-12">
-        <div className="p-24 ">
-          <h1 className="text-3xl md:text-5xl font-extrabold text-gray-700 md:leading-normal">
-            Rent out your <br /> holiday home like  <br /> a pro with{" "}
-            <span className="text-blue-500">StayBind</span>
+      <div className='flex flex-col lg:flex-row sm:mx-auto'>
+        <div className='p-12 md:p-52 md:pt-24 sm:p-10 lg:p-16 mt-16'>
+          <h1 className='text-3xl sm:text-4xl lg:text-5xl md:mt-4 font-extrabold text-gray-700 lg:leading-normal md:leading-normal'>
+            Rent out your holiday home like a pro with{" "}
+            <span className='text-blue-500'>StayBind</span>
           </h1>
-          <p className="text-sm text-gray-500 mb-6 pt-4">
-            Put the most advanced technology to work for you. Manage, <br />
-             automate,
+          <p className='text-xs sm:text-sm lg:text-base text-gray-500 mb-4 sm:mb-6 pt-2 sm:pt-4'>
+            Put the most advanced technology to work for you. Manage, automate,
             and streamline your business, all from one platform.
           </p>
-          <div className="flex p-2 mt-10 items-center space-x-8">
-            <button className="px-5 py-3 text-sm text-white bg-blue-500 rounded-sm">
+
+          <div className='flex p-2 mt-4 sm:mt-10 items-center space-x-4 sm:space-x-8'>
+            <button className='px-3 sm:px-5 py-2 sm:py-3 text-xs sm:text-sm text-white bg-blue-500 rounded-sm'>
               Get started
             </button>
-            <div className="flex text-4xl font-light items-center space-x-2 cursor-pointer">
+            <div className='flex text-2xl sm:text-4xl font-light items-center space-x-2'>
               <FaRegPlayCircle />
-              <p className="text-base">Watch Video</p>
+              <p className='text-xs sm:text-base'>Watch Video</p>
             </div>
           </div>
-          <div className="flex p-2 mt-8 space-x-12">
-            <div className="text-center">
-              <h2 className="text-4xl text-gray-700 font-semibold tracking-wider">
+          <div className='flex p-2 mt-8 space-x-4 sm:space-x-12'>
+            <div className='text-center'>
+              <h2 className='text-2xl sm:text-4xl text-gray-700 font-semibold tracking-wider'>
                 321%
               </h2>
-              <p className="text-gray-400 text-xs">Occupancy Rate</p>
+              <p className='text-gray-400 text-xs'>Occupancy Rate</p>
             </div>
-            <div className="text-center">
-              <h2 className="text-4xl text-gray-700 font-semibold tracking-wider">
+            <div className='text-center'>
+              <h2 className='text-2xl sm:text-4xl text-gray-700 font-semibold tracking-wider'>
                 25k
               </h2>
-              <p className="text-gray-400 text-xs">Revenue</p>
+              <p className='text-gray-400 text-xs'>Revenue</p>
             </div>
-            <div className="text-center">
-              <h2 className="text-4xl text-gray-700 font-semibold tracking-wider">
+            <div className='text-center'>
+              <h2 className='text-2xl sm:text-4xl text-gray-700 font-semibold tracking-wider'>
                 150+
               </h2>
-              <p className="text-gray-400 text-xs">Bookings</p>
+              <p className='text-gray-400 text-xs'>Bookings</p>
             </div>
           </div>
         </div>
-        <div className="flex-grow flex justify-center items-center">
-          {renderContent()}
-        </div>
-        <div className="flex flex-col p-20 space-y-4">
-          <div className="flex space-x-6 cursor-pointer" onClick={() => setActiveSection("Home")}>
-            <p className="text-gray-400">01</p>
-            <h3 className={`font-extrabold ${activeSection === "Home" && "text-blue-500"}`}>Home</h3>
-          </div>
-            {activeSection === "Home" && <div className="bg-gray-300 w-0.5 h-14"></div>}
-          {activeSection === "Calendar" && <div className="bg-gray-300 w-0.5 h-7"></div>}
-          <div className="flex space-x-6 cursor-pointer" onClick={() => setActiveSection("Calendar")}>
-            <p className="text-gray-400">02</p>
-            <h3 className={`font-extrabold ${activeSection === "Calendar" && "text-blue-500"}`}>Calendar</h3>
-          </div>
-          {activeSection === "Calendar" && <div className="bg-gray-300 w-0.5 h-7"></div>}
-          {activeSection === "Pricing" && <div className="bg-gray-300 w-0.5 h-7"></div>}
-          <div className="flex space-x-6 cursor-pointer" onClick={() => setActiveSection("Pricing")}>
-            <p className="text-gray-400">03</p>
-            <h3 className={`font-extrabold ${activeSection === "Pricing" && "text-blue-500"}`}>Pricing</h3>
-          </div>
-          {activeSection === "Pricing" && <div className="bg-gray-300 w-0.5 h-7"></div>}
-          {activeSection === "Worker" && <div className="bg-gray-300 w-0.5 h-7"></div>}
-          <div className="flex space-x-6 cursor-pointer" onClick={() => setActiveSection("Worker")}>
-            <p className="text-gray-400">04</p>
-            <h3 className={`font-extrabold ${activeSection === "Worker" && "text-blue-500"}`}>Worker</h3>
-          </div>
-          {activeSection === "Worker" && <div className="bg-gray-300 w-0.5 h-7"></div>}
-          {activeSection === "Profile" && <div className="bg-gray-300 w-0.5 h-14"></div>}
-          <div className="flex space-x-6 cursor-pointer" onClick={() => setActiveSection("Profile")}>
-            <p className="text-gray-400">05</p>
-            <h3 className={`font-extrabold ${activeSection === "Profile" && "text-blue-500"}`}>Profile</h3>
-          </div>
-        </div>
-        
+        <div className="flex-grow flex flex-col lg:flex-row justify-center items-center">
+    {renderContent()}
+    <div className="flex flex-col p-4 sm:p-10 lg:px- space-y-4">
+      <div className="flex space-x-4 sm:space-x-6 cursor-pointer" onClick={() => setActiveSection("Home")}>
+        <p className="text-gray-400">01</p>
+        <h3 className={`font-extrabold ${activeSection === "Home" && "text-blue-500"}`}>Home</h3>
       </div>
-      <img className="p-14 w-full " src={group} alt="" />
-      <div className="mt-10 w-full ">
-        <div className="relative overflow-hidden h-12 bg-black transform -rotate-3">
-          <div className="absolute top-3 left-0 animate-scroll whitespace-nowrap">
-            <span className="text-white mx-4">
-              Something great is on the way . . . . Coming Soon !! *
+      {activeSection === "Home" && <div className="bg-gray-300 w-0.5 h-10 sm:h-14"></div>}
+      {activeSection === "Calendar" && <div className="bg-gray-300 w-0.5 h-7 sm:h-7"></div>}
+      <div className="flex space-x-4 sm:space-x-6 cursor-pointer" onClick={() => setActiveSection("Calendar")}>
+        <p className="text-gray-400">02</p>
+        <h3 className={`font-extrabold ${activeSection === "Calendar" && "text-blue-500"}`}>Calendar</h3>
+      </div>
+      {activeSection === "Calendar" && <div className="bg-gray-300 w-0.5 h-7"></div>}
+      {activeSection === "Pricing" && <div className="bg-gray-300 w-0.5 h-7"></div>}
+      <div className="flex space-x-4 sm:space-x-6 cursor-pointer" onClick={() => setActiveSection("Pricing")}>
+        <p className="text-gray-400">03</p>
+        <h3 className={`font-extrabold ${activeSection === "Pricing" && "text-blue-500"}`}>Pricing</h3>
+      </div>
+      {activeSection === "Pricing" && <div className="bg-gray-300 w-0.5 h-7"></div>}
+      {activeSection === "Worker" && <div className="bg-gray-300 w-0.5 h-7"></div>}
+      <div className="flex space-x-4 sm:space-x-6 cursor-pointer" onClick={() => setActiveSection("Worker")}>
+        <p className="text-gray-400">04</p>
+        <h3 className={`font-extrabold ${activeSection === "Worker" && "text-blue-500"}`}>Worker</h3>
+      </div>
+      {activeSection === "Worker" && <div className="bg-gray-300 w-0.5 h-7"></div>}
+      {activeSection === "Profile" && <div className="bg-gray-300 w-0.5 h-14"></div>}
+      <div className="flex space-x-4 sm:space-x-6 cursor-pointer" onClick={() => setActiveSection("Profile")}>
+        <p className="text-gray-400">05</p>
+        <h3 className={`font-extrabold ${activeSection === "Profile" && "text-blue-500"}`}>Profile</h3>
+      </div>
+    </div>
+  </div>
+      
+      </div>
+
+      <img className='p-8 sm:p-14  w-full' src={group} alt='' />
+
+      <div className='mt-10 '>
+        <div className='relative overflow-hidden h-12 bg-black transform -rotate-3'>
+          <div className='absolute top-3 left-0 transform -translate-y-1/2 animate-scroll whitespace-nowrap'>
+            <span className='text-white mx-4 font-bold'>
+              Something great is on the way . . . . Coming Soon !!
             </span>
-            <span className="text-white mx-4">
-              Something great is on the way . . . . Coming Soon !! *
+            <span className='text-white mx-4 font-bold'>
+              Something great is on the way . . . . Coming Soon !!
             </span>
-            <span className="text-white mx-4">
-              Something great is on the way . . . . Coming Soon !! *
+            <span className='text-white mx-4 font-bold'>
+              Something great is on the way . . . . Coming Soon !!
             </span>
-            <span className="text-white mx-4">
+            <span className='text-white mx-4 font-bold'>
               Something great is on the way . . . . Coming Soon !!
             </span>
           </div>
